@@ -27,7 +27,7 @@ class Cores {
              i=0;
              n = new StringBuilder();
             do {
-                n.append(data.charAt(i));                     /////////////the first half in every line if the amoun t of cores every customer needs
+                n.append(data.charAt(i));                     /////////////the first half in every line if the amount of cores every customer needs
                 i++;
 
             } while (data.charAt(i) != ' ');
@@ -76,7 +76,7 @@ class Cores {
         System.out.println("Total amount: "+ findTotalAmount(num,k,l));            //////////we print out the total/max amount of money that we can have
     }
 
-        private int getNumberOfVMs(int k){    ///////we find the min amount of VMs for one ONE customer
+        private int getNumberOfVMs(int k){    ///////we find the min amount of VMs for one customer
             int [] fno=new int[k+1];
             fno[0]=0;
             for (int i=1;i<=k;i++){      ////we try find to find the min amount for of VMs for every core for 0 to the number of cores the customer wants
@@ -118,7 +118,7 @@ class Cores {
         for (int i=1;i<=k.length;i++){
             for (int j=1;j<=num;j++){
                 if (j-k[i-1]>=0){                             ////if  the current number of cores minus the amount of the current customer is >=0
-                    V[i][j]=Math.max(V[i-1][j],l[i-1]+V[i-1][j-k[i-1]]);    //////// we take the max between the previous and the the total price of each order plus the price in the cell previous line
+                    V[i][j]=Math.max(V[i-1][j],l[i-1]+V[i-1][j-k[i-1]]);    //////// we take the max between the previous and the total price of each order plus the price in the cell previous line
                                                                             ////////and the column of the current number if cores minus the number of cores the current customer wants
 
                 }else                     /////// else
